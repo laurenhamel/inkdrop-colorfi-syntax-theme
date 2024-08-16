@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Colorfi syntax theme for Inkdrop Markdown Editor",
   "theme": "syntax",
+  "repository": "https://github.com/laurenhamel/inkdrop-colorfi-syntax-theme",
+  "license": "MIT",
   "scripts": {
     "build": "sass src/index.scss:styles/index.css"
   },
