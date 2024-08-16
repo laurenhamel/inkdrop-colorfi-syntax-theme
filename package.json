@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
-  "name": "default-light-syntax",
-  "description": "Default light syntax theme",
+  "name": "colorfi-syntax",
+  "version": "0.1.0",
+  "description": "Colorfi syntax theme for Inkdrop Markdown Editor",
   "theme": "syntax",
   "scripts": {
-    "build": "lessc styles/less/default.less ./styles/index.css"
+    "build": "sass src/index.scss:styles/index.css"
   },
   "styleSheets": [
     "index.css"
@@ -13,6 +13,6 @@
     "inkdrop": "^5.x"
   },
   "devDependencies": {
-    "less": "^3.11.3"
+    "sass": "^1.77.8"
   }
 }

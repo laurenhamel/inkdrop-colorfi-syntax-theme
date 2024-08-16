@@ -1,215 +1,661 @@
-.editor {
-  /* Polar Night */
-  --base00: hsl(220 16% 22%);
-  --base01: hsl(222 16% 28%);
-  --base02: hsl(220 17% 32%);
-  --base03: hsl(220 16% 40%);
-
-  /* Snow Storm */
-  --base04: hsl(219 28% 88%);
-  --base05: hsl(218 27% 92%);
-  --base06: hsl(218 27% 94%);
-
-  /* Frost */
-  --base07: hsl(179 25% 65%);
-  --base08: hsl(193 43% 67%);
-  --base09: hsl(210 44% 63%);
-  --base0A: hsl(213 42% 52%);
-
-  /* Aurora */
-  --base0B: hsl(354 62% 56%);
-  --base0C: hsl(14 61% 63%);
-  --base0D: hsl(40 81% 73%);
-  --base0E: hsl(92 38% 55%);
-  --base0F: hsl(311 40% 63%);
-
-  .CodeMirror {
-    /* Background color of main window */
-    background-color: hsl(0, 0, 100);
-    color: var(--base02);
-    --fat-cursor-color: var(--base08);
-
-    .CodeMirror-scroll {
-      /* Color of otherwise un-styled text */
-      color: var(--base02);
-    }
-    .CodeMirror-gutters {
-      /* Gutter to the left */
-      background-color: hsl(0, 0, 100);
-    }
-    .CodeMirror-linenumber {
-      /* Line numbers in the gutter */
-      color: var(--base03);
-      opacity: 0.6;
-    }
-    .CodeMirror-selected {
-      /* Highlighed text */
-      background-color: var(--base05);
-    }
-    .CodeMirror-focused .CodeMirror-selected {
-      /* Highlighed text */
-      background-color: var(--base04);
-    }
-    .CodeMirror-cursor {
-      /* The cursor */
-      border-left: 1px solid var(--base00);
-    }
-    .CodeMirror-matchingbracket,
-    .CodeMirror-matchingtag {
-      /* When you click a tag/bracket and the matching one is highlighted */
-      background: var(--base03) !important;
-      border-bottom: 1px solid var(--base08) !important;
-    }
-    .CodeMirror-foldgutter-open:after {
-      /* Those little arrows in the gutter */
-      color: var(--base03);
-    }
-    .CodeMirror-foldgutter-folded:after {
-      /* The arrows after you collapse code */
-      color: var(--base03);
-    }
-    .CodeMirror.over-gutter,
-    .CodeMirror-activeline {
-      .CodeMirror-foldgutter-open:after {
-        /* Arrows when hovering on the gutter */
-        color: var(--base03);
-      }
-    }
-    .CodeMirror-foldmarker {
-      /* The [...] marking collapsed code */
-      border-color: var(--base03);
-      background-color: var(--base03);
-      color: var(--base02);
-    }
-    .CodeMirror .CodeMirror-linewidget img.inline-widget {
-      background: rgba(0, 0, 0, 0.05);
-    }
-    .CodeMirror-searching {
-      /* Ctrl + F results */
-      background-color: var(--base0D);
-      /* Selected result */
-      &.searching-current-match {
-        background-color: var(--base0C);
-      }
-    }
-  }
-
-  /* All 'dem swatches */
-
-  .CodeMirror {
-    .cm-quote {
-      color: var(--base0F);
-      font-style: italic;
-    }
-    .cm-atom,
-    .cm-formatting-list.cm-variable-3 {
-      color: var(--base0C);
-    }
-
-    .cm-keyword,
-    .cm-formatting-list.cm-variable-2 {
-      color: var(--base0A);
-    }
-
-    .cm-url,
-    .cm-string,
-    .cm-string-2,
-    .cm-hr {
-      color: var(--base09);
-    }
-    .cm-number,
-    .cm-attribute,
-    .cm-plus {
-      color: var(--base0A);
-    }
-    .cm-def,
-    .cm-property {
-      color: var(--base0C);
-    }
-    .cm-variable {
-      color: var(--base0A);
-    }
-    .cm-operator,
-    .cm-meta,
-    .cm-bracket {
-      color: var(--base0E);
-    }
-    .cm-comment {
-      color: var(--base03);
-      font-style: italic;
-    }
-    .cm-error,
-    .cm-minus {
-      color: var(--base0B);
-    }
-    .cm-formatting-header {
-      opacity: 0.3;
-    }
-    .cm-header {
-      color: var(--base0A);
-    }
-    .cm-link {
-      color: var(--base0E);
-      text-underline-position: under;
-    }
-    .cm-rangeinfo {
-      color: var(--base0C);
-    }
-    .cm-qualifier,
-    .cm-builtin,
-    .cm-tag {
-      color: var(--base08);
-    }
-    .cm-whitespace::before {
-      color: var(--base04);
-      opacity: 0.4;
-    }
-    .cm-formatting-quote,
-    .cm-formatting-strong,
-    .cm-formatting-em {
-      opacity: 0.6;
-    }
-    .cm-strong {
-      color: var(--base0B);
-    }
-    .cm-em {
-      color: var(--base0C);
-    }
-
-    /* carriage return */
-    .CodeMirror-code > div > pre > span::after,
-    .CodeMirror-line > span::after {
-      color: var(--base00);
-      opacity: 0.4;
-    }
-
-    .cm-inline-code {
-      background: rgba(0, 0, 0, 0.02);
-      color: var(--base03);
-    }
-
-    .gfm-codeblock-bg.CodeMirror-linebackground {
-      background: rgba(0, 0, 0, 0.01);
-    }
-
-    .cm-table-sep,
-    .table-row.table-row-1 {
-      color: var(--base0E);
-    }
-
-    .cm-quote.cm-link-barelink {
-      font-style: normal;
-      color: var(--base0B);
-    }
-  }
-
-  /* Active Line Highlight support */
-  .CodeMirror-activeline-background,
-  .CodeMirror-activeline-gutter {
-    background-color: color-mix(
-      in srgb,
-      var(--base06),
-      transparent 70%
-    ) !important;
-  }
+/* #region Colors */
+/* #endregion */
+/* #region Syntax */
+/* #endregion */
+body[class*=light-ui].theme-colorfi-syntax .editor {
+  --color-syntax-background: #dddddd;
+  --color-syntax-default: #535353;
+  --color-syntax-atom: #e88501;
+  --color-syntax-attribute: #6d8600;
+  --color-syntax-bracket: #222222;
+  --color-syntax-builtin: #446fbd;
+  --color-syntax-comment: #949494;
+  --color-syntax-def: #8757ad;
+  --color-syntax-em: #446fbd;
+  --color-syntax-error: #dc322f;
+  --color-syntax-header: #d33682;
+  --color-syntax-hr: #e88501;
+  --color-syntax-keyword: #446fbd;
+  --color-syntax-link: #8757ad;
+  --color-syntax-meta: #535353;
+  --color-syntax-minus: #dc322f;
+  --color-syntax-negative: #dc322f;
+  --color-syntax-number: #6d8600;
+  --color-syntax-operator: #535353;
+  --color-syntax-plus: #85a300;
+  --color-syntax-positive: #85a300;
+  --color-syntax-property: #8757ad;
+  --color-syntax-qualifier: #446fbd;
+  --color-syntax-quote: #446fbd;
+  --color-syntax-rangeinfo: #6c71c4;
+  --color-syntax-string-2: #e88501;
+  --color-syntax-string: #e88501;
+  --color-syntax-strong: #222222;
+  --color-syntax-tag: #446fbd;
+  --color-syntax-type: #e88501;
+  --color-syntax-variable-2: #535353;
+  --color-syntax-variable-3: #535353;
+  --color-syntax-variable: #535353;
+  --color-syntax-whitespace: #949494;
 }
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock {
+  /* Background color of main window */
+  color: var(--color-syntax-default);
+  --fat-cursor-color: var(--base08);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror pre,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock pre {
+  background-color: var(--color-syntax-background);
+  border-radius: 3px;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-scroll,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-scroll {
+  /* Color of otherwise un-styled text */
+  color: var(--color-syntax-default);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-gutters,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-gutters {
+  /* Gutter to the left */
+  background-color: hsl(0, 0%, 100%);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-linenumber,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-linenumber {
+  /* Line numbers in the gutter */
+  color: var(--base03);
+  opacity: 0.6;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-selected,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-selected {
+  /* Highlighed text */
+  background-color: var(--base05);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-focused .CodeMirror-selected,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-focused .CodeMirror-selected {
+  /* Highlighed text */
+  background-color: var(--base04);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-cursor,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-cursor {
+  /* The cursor */
+  border-left: 1px solid var(--base00);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-matchingbracket,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-matchingtag,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-matchingbracket,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-matchingtag {
+  /* When you click a tag/bracket and the matching one is highlighted */
+  background: var(--base03) !important;
+  border-bottom: 1px solid var(--base08) !important;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-foldgutter-open:after,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-foldgutter-open:after {
+  /* Those little arrows in the gutter */
+  color: var(--base03);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-foldgutter-folded:after,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-foldgutter-folded:after {
+  /* The arrows after you collapse code */
+  color: var(--base03);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror.over-gutter .CodeMirror-foldgutter-open:after,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-activeline .CodeMirror-foldgutter-open:after,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror.over-gutter .CodeMirror-foldgutter-open:after,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-activeline .CodeMirror-foldgutter-open:after {
+  /* Arrows when hovering on the gutter */
+  color: var(--base03);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-foldmarker,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-foldmarker {
+  /* The [...] marking collapsed code */
+  border-color: var(--base03);
+  background-color: var(--base03);
+  color: var(--color-syntax-default);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror .CodeMirror-linewidget img.inline-widget,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror .CodeMirror-linewidget img.inline-widget {
+  background: rgba(0, 0, 0, 0.05);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-searching,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-searching {
+  /* Ctrl + F results */
+  background-color: var(--base0D);
+  /* Selected result */
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-searching.searching-current-match,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-searching.searching-current-match {
+  background-color: var(--base0C);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default {
+  color: var(--color-syntax-default);
+  /* carriage return */
+  /* carriage return */
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-quote,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-comment,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-quote,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-comment {
+  font-style: italic;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-formatting-header,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-formatting-header {
+  opacity: 0.3;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-link,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-link {
+  text-underline-position: under;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-whitespace::before,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-whitespace::before {
+  opacity: 0.4;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-formatting-quote,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-formatting-strong,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-formatting-em,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-formatting-quote,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-formatting-strong,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-formatting-em {
+  opacity: 0.6;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .CodeMirror-code > div > pre > span::after,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .CodeMirror-line > span::after,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .CodeMirror-code > div > pre > span::after,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .CodeMirror-line > span::after {
+  opacity: 0.4;
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-inline-code,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-inline-code {
+  background: rgba(0, 0, 0, 0.02);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .gfm-codeblock-bg.CodeMirror-linebackground,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .gfm-codeblock-bg.CodeMirror-linebackground {
+  background: rgba(0, 0, 0, 0.01);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-negative,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-negative {
+  color: var(--color-syntax-negative);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-positive,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-positive {
+  color: var(--color-syntax-positive);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-quote,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-quote {
+  color: var(--color-syntax-quote);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-atom,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-atom {
+  color: var(--color-syntax-atom);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-variable-3,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-variable-3 {
+  color: var(--color-syntax-variable-3);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-variable-2,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-variable-2 {
+  color: var(--color-syntax-variable-2);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-url,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-url {
+  color: var(--color-syntax-link);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-string,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-string {
+  color: var(--color-syntax-string);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-string-2,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-string-2 {
+  color: var(--color-syntax-string-2);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-hr,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-hr {
+  color: var(--color-syntax-hr);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-number,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-number {
+  color: var(--color-syntax-number);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-attribute,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-attribute {
+  color: var(--color-syntax-attribute);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-keyword,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-keyword {
+  color: var(--color-syntax-keyword);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-plus,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-plus {
+  color: var(--color-syntax-plus);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-def,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-def {
+  color: var(--color-syntax-def);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-property,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-property {
+  color: var(--color-syntax-property);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-variable,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-variable {
+  color: var(--color-syntax-variable);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-operator,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-operator {
+  color: var(--color-syntax-operator);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-meta,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-meta {
+  color: var(--color-syntax-meta);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-bracket,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-bracket {
+  color: var(--color-syntax-bracket);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-comment,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-comment {
+  color: var(--color-syntax-comment);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-error,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-error {
+  color: var(--color-syntax-error);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-minus,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-minus {
+  color: var(--color-syntax-minus);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-header,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-header {
+  color: var(--color-syntax-header);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-link,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-link {
+  color: var(--color-syntax-link);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-rangeinfo,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-rangeinfo {
+  color: var(--color-syntax-rangeinfo);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-qualifier,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-qualifier {
+  color: var(--color-syntax-qualifier);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-builtin,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-builtin {
+  color: var(--color-syntax-builtin);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-tag,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-tag {
+  color: var(--color-syntax-tag);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-whitespace::before,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-whitespace::before {
+  color: var(--color-syntax-whitespace);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-strong,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-strong {
+  color: var(--color-syntax-strong);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-em,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-em {
+  color: var(--color-syntax-em);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-type,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-type {
+  color: var(--color-syntax-type);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-quote.cm-link-barelink,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-quote.cm-link-barelink {
+  font-style: normal;
+  color: var(--color-syntax-link);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .CodeMirror-code > div > pre > span::after,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .CodeMirror-line > span::after,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .CodeMirror-code > div > pre > span::after,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .CodeMirror-line > span::after {
+  color: var(--base00);
+}
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-table-sep,
+body[class*=light-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .table-row.table-row-1,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-table-sep,
+body[class*=light-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .table-row.table-row-1 {
+  color: var(--base0E);
+}
+
+/* Active Line Highlight support */
+.CodeMirror-activeline-background,
+.CodeMirror-activeline-gutter {
+  background-color: color-mix(in srgb, var(--base06), transparent 70%) !important;
+}
+
+body[class*=dark-ui].theme-colorfi-syntax .editor {
+  --color-syntax-background: #222222;
+  --color-syntax-default: #dddddd;
+  --color-syntax-atom: #d89333;
+  --color-syntax-attribute: #85a300;
+  --color-syntax-bracket: #eeeeee;
+  --color-syntax-builtin: #6c9ef8;
+  --color-syntax-comment: #767676;
+  --color-syntax-def: #b77fdb;
+  --color-syntax-em: #6c9ef8;
+  --color-syntax-error: #e64946;
+  --color-syntax-header: #d85896;
+  --color-syntax-hr: #d89333;
+  --color-syntax-keyword: #6c9ef8;
+  --color-syntax-link: #b77fdb;
+  --color-syntax-meta: #dddddd;
+  --color-syntax-minus: #e64946;
+  --color-syntax-negative: #e64946;
+  --color-syntax-number: #85a300;
+  --color-syntax-operator: #dddddd;
+  --color-syntax-plus: #6d8600;
+  --color-syntax-positive: #6d8600;
+  --color-syntax-property: #b77fdb;
+  --color-syntax-qualifier: #6c9ef8;
+  --color-syntax-quote: #6c9ef8;
+  --color-syntax-rangeinfo: #8487c8;
+  --color-syntax-string-2: #d89333;
+  --color-syntax-string: #d89333;
+  --color-syntax-strong: #eeeeee;
+  --color-syntax-tag: #6c9ef8;
+  --color-syntax-type: #d89333;
+  --color-syntax-variable-2: #dddddd;
+  --color-syntax-variable-3: #dddddd;
+  --color-syntax-variable: #dddddd;
+  --color-syntax-whitespace: #767676;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock {
+  /* Background color of main window */
+  color: var(--color-syntax-default);
+  --fat-cursor-color: var(--base08);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror pre,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock pre {
+  background-color: var(--color-syntax-background);
+  border-radius: 3px;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-scroll,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-scroll {
+  /* Color of otherwise un-styled text */
+  color: var(--color-syntax-default);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-gutters,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-gutters {
+  /* Gutter to the left */
+  background-color: hsl(0, 0%, 100%);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-linenumber,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-linenumber {
+  /* Line numbers in the gutter */
+  color: var(--base03);
+  opacity: 0.6;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-selected,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-selected {
+  /* Highlighed text */
+  background-color: var(--base05);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-focused .CodeMirror-selected,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-focused .CodeMirror-selected {
+  /* Highlighed text */
+  background-color: var(--base04);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-cursor,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-cursor {
+  /* The cursor */
+  border-left: 1px solid var(--base00);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-matchingbracket,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-matchingtag,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-matchingbracket,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-matchingtag {
+  /* When you click a tag/bracket and the matching one is highlighted */
+  background: var(--base03) !important;
+  border-bottom: 1px solid var(--base08) !important;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-foldgutter-open:after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-foldgutter-open:after {
+  /* Those little arrows in the gutter */
+  color: var(--base03);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-foldgutter-folded:after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-foldgutter-folded:after {
+  /* The arrows after you collapse code */
+  color: var(--base03);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror.over-gutter .CodeMirror-foldgutter-open:after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-activeline .CodeMirror-foldgutter-open:after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror.over-gutter .CodeMirror-foldgutter-open:after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-activeline .CodeMirror-foldgutter-open:after {
+  /* Arrows when hovering on the gutter */
+  color: var(--base03);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-foldmarker,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-foldmarker {
+  /* The [...] marking collapsed code */
+  border-color: var(--base03);
+  background-color: var(--base03);
+  color: var(--color-syntax-default);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror .CodeMirror-linewidget img.inline-widget,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror .CodeMirror-linewidget img.inline-widget {
+  background: rgba(0, 0, 0, 0.05);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-searching,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-searching {
+  /* Ctrl + F results */
+  background-color: var(--base0D);
+  /* Selected result */
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .CodeMirror-searching.searching-current-match,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .CodeMirror-searching.searching-current-match {
+  background-color: var(--base0C);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default {
+  color: var(--color-syntax-default);
+  /* carriage return */
+  /* carriage return */
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-quote,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-comment,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-quote,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-comment {
+  font-style: italic;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-formatting-header,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-formatting-header {
+  opacity: 0.3;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-link,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-link {
+  text-underline-position: under;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-whitespace::before,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-whitespace::before {
+  opacity: 0.4;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-formatting-quote,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-formatting-strong,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-formatting-em,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-formatting-quote,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-formatting-strong,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-formatting-em {
+  opacity: 0.6;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .CodeMirror-code > div > pre > span::after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .CodeMirror-line > span::after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .CodeMirror-code > div > pre > span::after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .CodeMirror-line > span::after {
+  opacity: 0.4;
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-inline-code,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-inline-code {
+  background: rgba(0, 0, 0, 0.02);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .gfm-codeblock-bg.CodeMirror-linebackground,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .gfm-codeblock-bg.CodeMirror-linebackground {
+  background: rgba(0, 0, 0, 0.01);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-negative,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-negative {
+  color: var(--color-syntax-negative);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-positive,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-positive {
+  color: var(--color-syntax-positive);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-quote,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-quote {
+  color: var(--color-syntax-quote);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-atom,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-atom {
+  color: var(--color-syntax-atom);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-variable-3,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-variable-3 {
+  color: var(--color-syntax-variable-3);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-variable-2,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-variable-2 {
+  color: var(--color-syntax-variable-2);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-url,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-url {
+  color: var(--color-syntax-link);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-string,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-string {
+  color: var(--color-syntax-string);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-string-2,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-string-2 {
+  color: var(--color-syntax-string-2);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-hr,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-hr {
+  color: var(--color-syntax-hr);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-number,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-number {
+  color: var(--color-syntax-number);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-attribute,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-attribute {
+  color: var(--color-syntax-attribute);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-keyword,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-keyword {
+  color: var(--color-syntax-keyword);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-plus,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-plus {
+  color: var(--color-syntax-plus);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-def,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-def {
+  color: var(--color-syntax-def);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-property,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-property {
+  color: var(--color-syntax-property);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-variable,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-variable {
+  color: var(--color-syntax-variable);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-operator,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-operator {
+  color: var(--color-syntax-operator);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-meta,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-meta {
+  color: var(--color-syntax-meta);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-bracket,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-bracket {
+  color: var(--color-syntax-bracket);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-comment,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-comment {
+  color: var(--color-syntax-comment);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-error,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-error {
+  color: var(--color-syntax-error);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-minus,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-minus {
+  color: var(--color-syntax-minus);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-header,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-header {
+  color: var(--color-syntax-header);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-link,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-link {
+  color: var(--color-syntax-link);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-rangeinfo,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-rangeinfo {
+  color: var(--color-syntax-rangeinfo);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-qualifier,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-qualifier {
+  color: var(--color-syntax-qualifier);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-builtin,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-builtin {
+  color: var(--color-syntax-builtin);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-tag,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-tag {
+  color: var(--color-syntax-tag);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-whitespace::before,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-whitespace::before {
+  color: var(--color-syntax-whitespace);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-strong,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-strong {
+  color: var(--color-syntax-strong);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-em,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-em {
+  color: var(--color-syntax-em);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-type,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-type {
+  color: var(--color-syntax-type);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-quote.cm-link-barelink,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-quote.cm-link-barelink {
+  font-style: normal;
+  color: var(--color-syntax-link);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .CodeMirror-code > div > pre > span::after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .CodeMirror-line > span::after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .CodeMirror-code > div > pre > span::after,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .CodeMirror-line > span::after {
+  color: var(--base00);
+}
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .cm-table-sep,
+body[class*=dark-ui].theme-colorfi-syntax .editor .CodeMirror .cm-s-default .table-row.table-row-1,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .cm-table-sep,
+body[class*=dark-ui].theme-colorfi-syntax .editor .mde-preview .codeblock .cm-s-default .table-row.table-row-1 {
+  color: var(--base0E);
+}
+
+/* Active Line Highlight support */
+.CodeMirror-activeline-background,
+.CodeMirror-activeline-gutter {
+  background-color: color-mix(in srgb, var(--base06), transparent 70%) !important;
+}
+
+/*# sourceMappingURL=index.css.map */

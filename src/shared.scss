@@ -1,0 +1,305 @@
+@use 'colors';
+
+@mixin syntax($theme) {
+
+  body[class*="#{$theme}-ui"].theme-colorfi-syntax {
+
+    .editor {
+      @include colors.syntax($theme);
+      
+      .CodeMirror,
+      .mde-preview .codeblock {
+
+        /* Background color of main window */
+        color: var(--color-syntax-default);
+        --fat-cursor-color: var(--base08);
+
+        &,
+        pre {
+          background-color: var(--color-syntax-background);
+          border-radius: 3px;
+        }
+
+        .CodeMirror-scroll {
+          /* Color of otherwise un-styled text */
+          color: var(--color-syntax-default);
+        }
+
+        .CodeMirror-gutters {
+          /* Gutter to the left */
+          background-color: hsl(0deg 0% 100%);
+        }
+
+        .CodeMirror-linenumber {
+          /* Line numbers in the gutter */
+          color: var(--base03);
+          opacity: 0.6;
+        }
+
+        .CodeMirror-selected {
+          /* Highlighed text */
+          background-color: var(--base05);
+        }
+
+        .CodeMirror-focused .CodeMirror-selected {
+          /* Highlighed text */
+          background-color: var(--base04);
+        }
+
+        .CodeMirror-cursor {
+          /* The cursor */
+          border-left: 1px solid var(--base00);
+        }
+
+        .CodeMirror-matchingbracket,
+        .CodeMirror-matchingtag {
+          /* When you click a tag/bracket and the matching one is highlighted */
+          background: var(--base03) !important;
+          border-bottom: 1px solid var(--base08) !important;
+        }
+
+        .CodeMirror-foldgutter-open:after {
+          /* Those little arrows in the gutter */
+          color: var(--base03);
+        }
+
+        .CodeMirror-foldgutter-folded:after {
+          /* The arrows after you collapse code */
+          color: var(--base03);
+        }
+
+        .CodeMirror.over-gutter,
+        .CodeMirror-activeline {
+          .CodeMirror-foldgutter-open:after {
+            /* Arrows when hovering on the gutter */
+            color: var(--base03);
+          }
+        }
+
+        .CodeMirror-foldmarker {
+          /* The [...] marking collapsed code */
+          border-color: var(--base03);
+          background-color: var(--base03);
+          color: var(--color-syntax-default);
+        }
+
+        .CodeMirror .CodeMirror-linewidget img.inline-widget {
+          background: rgba(0, 0, 0, 0.05);
+        }
+
+        .CodeMirror-searching {
+          /* Ctrl + F results */
+          background-color: var(--base0D);
+          /* Selected result */
+          &.searching-current-match {
+            background-color: var(--base0C);
+          }
+        }
+
+        .cm-s-default {
+          color: var(--color-syntax-default);
+
+          .cm-quote,
+          .cm-comment {
+            font-style: italic;
+          }
+          
+          .cm-formatting-header {
+            opacity: 0.3;
+          }
+          
+          .cm-link {
+            text-underline-position: under;
+          }
+          
+          .cm-whitespace::before {
+            opacity: 0.4;
+          }
+
+          .cm-formatting-quote,
+          .cm-formatting-strong,
+          .cm-formatting-em {
+            opacity: 0.6;
+          }
+
+          /* carriage return */
+          .CodeMirror-code > div > pre > span::after,
+          .CodeMirror-line > span::after {
+            opacity: 0.4;
+          }
+
+          .cm-inline-code {
+            background: rgba(0, 0, 0, 0.02);
+          }
+
+          .gfm-codeblock-bg.CodeMirror-linebackground {
+            background: rgba(0, 0, 0, 0.01);
+          }
+
+          .cm-negative {
+            color: var(--color-syntax-negative);
+          }
+
+          .cm-positive {
+            color: var(--color-syntax-positive);
+          }
+
+          .cm-quote {
+            color: var(--color-syntax-quote);
+          }
+
+          .cm-atom {
+            color: var(--color-syntax-atom);
+          }
+
+          .cm-variable-3 {
+            color: var(--color-syntax-variable-3);
+          }
+
+          .cm-variable-2 {
+            color: var(--color-syntax-variable-2);
+          }
+
+          .cm-url {
+            color: var(--color-syntax-link);
+          }
+
+          .cm-string {
+            color: var(--color-syntax-string);
+          }
+
+          .cm-string-2 {
+            color: var(--color-syntax-string-2);
+          }
+
+          .cm-hr {
+            color: var(--color-syntax-hr);
+          }
+
+          .cm-number {
+            color: var(--color-syntax-number);
+          }
+
+          .cm-attribute {
+            color: var(--color-syntax-attribute);
+          }
+
+          .cm-keyword {
+            color: var(--color-syntax-keyword);
+          }
+
+          .cm-plus {
+            color: var(--color-syntax-plus);
+          }
+
+          .cm-def {
+            color: var(--color-syntax-def);
+          }
+
+          .cm-property {
+            color: var(--color-syntax-property);
+          }
+
+          .cm-variable {
+            color: var(--color-syntax-variable);
+          }
+
+          .cm-operator {
+            color: var(--color-syntax-operator);
+          }
+
+          .cm-meta {
+            color: var(--color-syntax-meta);
+          }
+
+          .cm-bracket {
+            color: var(--color-syntax-bracket);
+          }
+
+          .cm-comment {
+            color: var(--color-syntax-comment);
+          }
+
+          .cm-error {
+            color: var(--color-syntax-error);
+          }
+
+          .cm-minus {
+            color: var(--color-syntax-minus);
+          }
+
+          .cm-header {
+            color: var(--color-syntax-header);
+          }
+
+          .cm-link {
+            color: var(--color-syntax-link);
+          }
+
+          .cm-rangeinfo {
+            color: var(--color-syntax-rangeinfo);
+          }
+
+          .cm-qualifier {
+            color: var(--color-syntax-qualifier);
+          }
+
+          .cm-builtin {
+            color: var(--color-syntax-builtin);
+          }
+
+          .cm-tag {
+            color: var(--color-syntax-tag);
+          }
+
+          .cm-whitespace::before {
+            color: var(--color-syntax-whitespace);
+          }
+
+          .cm-strong {
+            color: var(--color-syntax-strong);
+          }
+
+          .cm-em {
+            color: var(--color-syntax-em);
+          }
+
+          .cm-type {
+            color: var(--color-syntax-type);
+          }
+
+          .cm-quote.cm-link-barelink {
+            font-style: normal;
+            color: var(--color-syntax-link);
+          }
+
+          /* carriage return */
+          .CodeMirror-code > div > pre > span::after,
+          .CodeMirror-line > span::after {
+            color: var(--base00);
+          }
+
+          .cm-table-sep,
+          .table-row.table-row-1 {
+            color: var(--base0E);
+          }
+        }
+
+        @content;
+
+      }
+    }
+
+  }
+
+  /* Active Line Highlight support */
+  .CodeMirror-activeline-background,
+  .CodeMirror-activeline-gutter {
+    background-color: color-mix(
+      in srgb,
+      var(--base06),
+      transparent 70%
+    ) !important;
+  }
+
+}
