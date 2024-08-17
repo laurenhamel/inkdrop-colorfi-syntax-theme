@@ -9,16 +9,9 @@
       
       .CodeMirror,
       .mde-preview .codeblock {
-
-        /* Background color of main window */
         color: var(--color-syntax-default);
-        --fat-cursor-color: var(--base08);
-
-        &,
-        pre {
-          background-color: var(--color-syntax-background);
-          border-radius: 3px;
-        }
+        background-color: var(--color-syntax-background);
+        border-radius: 3px;
 
         .CodeMirror-scroll {
           /* Color of otherwise un-styled text */
@@ -27,75 +20,77 @@
 
         .CodeMirror-gutters {
           /* Gutter to the left */
-          background-color: hsl(0deg 0% 100%);
+          border-right: 1px solid color-mix(in srgb, var(--color-syntax-gutter) 40%, transparent 100%);
+          background-color: transparent;
         }
 
         .CodeMirror-linenumber {
           /* Line numbers in the gutter */
-          color: var(--base03);
+          color: var(--color-syntax-gutter);
           opacity: 0.6;
         }
 
         .CodeMirror-selected {
           /* Highlighed text */
-          background-color: var(--base05);
+          background-color: var(--color-syntax-highlight-3);
         }
 
         .CodeMirror-focused .CodeMirror-selected {
           /* Highlighed text */
-          background-color: var(--base04);
+          background-color: var(--color-syntax-highlight-3);
         }
 
         .CodeMirror-cursor {
           /* The cursor */
-          border-left: 1px solid var(--base00);
+          border-left: 1px solid var(--color-syntax-default);
         }
 
         .CodeMirror-matchingbracket,
         .CodeMirror-matchingtag {
           /* When you click a tag/bracket and the matching one is highlighted */
-          background: var(--base03) !important;
-          border-bottom: 1px solid var(--base08) !important;
+          background: var(--color-syntax-highlight) !important;
+          border-bottom: 1px solid var(--color-syntax-underline) !important;
         }
 
         .CodeMirror-foldgutter-open:after {
           /* Those little arrows in the gutter */
-          color: var(--base03);
+          color: var(--color-syntax-default);
         }
 
         .CodeMirror-foldgutter-folded:after {
           /* The arrows after you collapse code */
-          color: var(--base03);
+          color: var(--color-syntax-default);
         }
 
         .CodeMirror.over-gutter,
         .CodeMirror-activeline {
           .CodeMirror-foldgutter-open:after {
             /* Arrows when hovering on the gutter */
-            color: var(--base03);
+            color: var(--color-syntax-default);
           }
         }
 
         .CodeMirror-foldmarker {
           /* The [...] marking collapsed code */
-          border-color: var(--base03);
-          background-color: var(--base03);
+          border-color: var(--color-syntax-default);
+          background-color: var(--color-syntax-default);
           color: var(--color-syntax-default);
         }
 
         .CodeMirror .CodeMirror-linewidget img.inline-widget {
-          background: rgba(0, 0, 0, 0.05);
+          background: color-mix(in srgb, var(--color-syntax-default) 5%, transparent 100%);
         }
 
         .CodeMirror-searching {
           /* Ctrl + F results */
-          background-color: var(--base0D);
+          background-color: var(--color-syntax-highlight-2);
           /* Selected result */
           &.searching-current-match {
-            background-color: var(--base0C);
+            background-color: var(--color-syntax-highlight);
           }
         }
 
+        &.cm-s- .CodeMirror-lines,
         .cm-s-default {
           color: var(--color-syntax-default);
 
@@ -128,12 +123,9 @@
             opacity: 0.4;
           }
 
-          .cm-inline-code {
-            background: rgba(0, 0, 0, 0.02);
-          }
-
+          .cm-inline-code,
           .gfm-codeblock-bg.CodeMirror-linebackground {
-            background: rgba(0, 0, 0, 0.01);
+            background: color-mix(in srgb, var(--color-syntax-default) 10%, transparent);
           }
 
           .cm-negative {
@@ -158,6 +150,10 @@
 
           .cm-variable-2 {
             color: var(--color-syntax-variable-2);
+          }
+
+          .cm-inline-code {
+            color: var(--color-syntax-inline);
           }
 
           .cm-url {
@@ -266,6 +262,10 @@
 
           .cm-type {
             color: var(--color-syntax-type);
+          }
+
+          .cm-highlight {
+            background: var(--color-syntax-highlight-2);
           }
 
           .cm-quote.cm-link-barelink {
